@@ -26,13 +26,9 @@ public class KeyboardController : MonoBehaviour
             Vector3 movement = new Vector3(deltaX, 0, deltaZ);
 
             movement = Vector3.ClampMagnitude(movement, speed);
-
             movement.y = gravity;
-
             movement *= Time.deltaTime;
-
             movement = transform.TransformDirection(movement);
-
             charController.Move(movement);
         }
     }

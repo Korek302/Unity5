@@ -7,7 +7,6 @@ public class Rotator : MonoBehaviour
     private float _scale = 0.0f;
     private float _scaleMax = 2.0f;
     private float _scaleMin = 1.0f;
-    private bool _direction = true;
 
 	void Update ()
     {

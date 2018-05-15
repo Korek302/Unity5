@@ -29,8 +29,6 @@ public class GunController : MonoBehaviour
         {
             audioSource.PlayOneShot(pistolShotClip);
 
-            //Debug.DrawRay(transform.parent.position, 3 * transform.parent.forward, Color.cyan, 3.0f, false);
-
             Ray ray = new Ray(transform.parent.position, transform.parent.forward);
             RaycastHit hit;
 
@@ -38,15 +36,10 @@ public class GunController : MonoBehaviour
             {
                 if(hit.transform.tag == "Enemy" && hit.distance < range)
                 {
-                    Debug.Log("Trafiony przeciwnik");
                     hit.transform.gameObject.GetComponent<EnemyController>().hit();
                     hit.transform.tag = "Untagged";
                     Messenger.Broadcast(GameEvent.HIT);
                 }
-            }
-            else
-            {
-                Debug.Log("Pudlo");
             }
         }
 	}
